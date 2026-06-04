@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfpsqbo5lb0ye"
+path="res://.godot/imported/SR_Veh_Kart_Green.obj-9cbc3f478ffbc74fc0ed25c65ad61b7e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Veh_Kart_Green.obj-9cbc3f478ffbc74fc0ed25c65ad61b7e.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Veh_Kart_Green.obj"
+dest_files=["res://.godot/imported/SR_Veh_Kart_Green.obj-9cbc3f478ffbc74fc0ed25c65ad61b7e.mesh", "res://.godot/imported/SR_Veh_Kart_Green.obj-9cbc3f478ffbc74fc0ed25c65ad61b7e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

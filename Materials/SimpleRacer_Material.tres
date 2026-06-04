@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6gl7t1poe2fu"]
+
+[ext_resource type="Texture2D" uid="uid://cd048ldg0f48k" path="res://Assets/Simple Racer/Textures/SimpleRacer_Texture.png" id="1_jwxum"]
+
+[resource]
+albedo_texture = ExtResource("1_jwxum")

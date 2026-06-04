@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bupf5vcs1g6qk"
+path="res://.godot/imported/SR_Prop_ArrowSign_01.obj-b4a210dc037470b509f15b62af1ac01f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Prop_ArrowSign_01.obj-b4a210dc037470b509f15b62af1ac01f.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Prop_ArrowSign_01.obj"
+dest_files=["res://.godot/imported/SR_Prop_ArrowSign_01.obj-b4a210dc037470b509f15b62af1ac01f.mesh", "res://.godot/imported/SR_Prop_ArrowSign_01.obj-b4a210dc037470b509f15b62af1ac01f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

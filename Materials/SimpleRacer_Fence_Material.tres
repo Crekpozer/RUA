@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://drfi3k5yu1gl2"]
+
+[ext_resource type="Texture2D" uid="uid://crlnog2wepsgy" path="res://Assets/Simple Racer/Textures/Fence_Alpha.png" id="1_78vgp"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_78vgp")

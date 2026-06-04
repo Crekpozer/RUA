@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://by5knkfhey1gu"
+path="res://.godot/imported/SR_Prop_Arch_Black.obj-87b11003f3d2bcacc70f58df53020801.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Prop_Arch_Black.obj-87b11003f3d2bcacc70f58df53020801.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Prop_Arch_Black.obj"
+dest_files=["res://.godot/imported/SR_Prop_Arch_Black.obj-87b11003f3d2bcacc70f58df53020801.mesh", "res://.godot/imported/SR_Prop_Arch_Black.obj-87b11003f3d2bcacc70f58df53020801.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ci67gnkuuas4o"
+path="res://.godot/imported/SR_Veh_StockCar_Lime.obj-f3e1fab84472d8a69a242aa53b8afcf4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Veh_StockCar_Lime.obj-f3e1fab84472d8a69a242aa53b8afcf4.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Veh_StockCar_Lime.obj"
+dest_files=["res://.godot/imported/SR_Veh_StockCar_Lime.obj-f3e1fab84472d8a69a242aa53b8afcf4.mesh", "res://.godot/imported/SR_Veh_StockCar_Lime.obj-f3e1fab84472d8a69a242aa53b8afcf4.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

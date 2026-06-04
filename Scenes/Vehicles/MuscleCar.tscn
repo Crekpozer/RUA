@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cvsbq0fgtxba"]
+
+[ext_resource type="Script" uid="uid://c5eyx3gq7l3m6" path="res://Scripts/RaycastCar.gd" id="1_efdnf"]
+[ext_resource type="Texture2D" uid="uid://cd048ldg0f48k" path="res://Assets/Simple Racer/Textures/SimpleRacer_Texture.png" id="2_nc6hp"]
+[ext_resource type="ArrayMesh" uid="uid://d05ywa1iw4mk1" path="res://Assets/Simple Racer/Obj/SR_Veh_MuscleSports_Yellow.obj" id="3_6snh6"]
+[ext_resource type="Texture2D" uid="uid://dafgrf2ly6tde" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_07.png" id="4_x6r48"]
+[ext_resource type="Script" uid="uid://3oayr5n77xjd" path="res://Scripts/RaycastWheel.gd" id="5_rah24"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efdnf"]
+friction = 0.53
+bounce = 0.05
+
+[sub_resource type="Curve" id="Curve_efdnf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.019662924, 0), 0.0, 0.0, 0, 0, Vector2(0.25842696, 0.66317534), 0.0, 0.0, 0, 0, Vector2(0.26685393, 0.15435505), 0.0, 0.0, 0, 0, Vector2(0.46629208, 0.8351709), 0.0, 0.0, 0, 0, Vector2(0.497191, 0.11135626), 0.0, 0.0, 0, 0, Vector2(0.63202244, 0.9785006), 0.0, 0.0, 0, 0, Vector2(0.8735955, 0.9713341), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2wwn"]
+albedo_texture = ExtResource("2_nc6hp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bia53"]
+margin = 0.638
+size = Vector3(2.5386467, 0.7440796, 3.8388672)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46faf"]
+albedo_texture = ExtResource("4_x6r48")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1cwr0"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.15
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_efdnf"]
+length = 33.666
+
+[node name="Car" type="RigidBody3D" unique_id=1819788537 node_paths=PackedStringArray("wheels")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+mass = 50.0
+physics_material_override = SubResource("PhysicsMaterial_efdnf")
+center_of_mass_mode = 1
+script = ExtResource("1_efdnf")
+wheels = [NodePath("WheelFL"), NodePath("WheelRL"), NodePath("WheelFR"), NodePath("WheelRR")]
+acceleration = 200.0
+accelerationCurve = SubResource("Curve_efdnf")
+
+[node name="SrVehMuscleSportsYellow" type="MeshInstance3D" parent="." unique_id=1333341378]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0.0020909458, -0.4981172, 0.069164455)
+material_override = SubResource("StandardMaterial3D_s2wwn")
+mesh = ExtResource("3_6snh6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719032423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030874256, 0.14938354, 0.03399999)
+shape = SubResource("BoxShape3D_bia53")
+
+[node name="WheelFL" type="RayCast3D" parent="." unique_id=655667928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7386873, 0.078, -1.1625369)
+enabled = false
+script = ExtResource("5_rah24")
+
+[node name="Wheel" type="MeshInstance3D" parent="WheelFL" unique_id=1787399194]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_46faf")
+mesh = SubResource("CylinderMesh_1cwr0")
+
+[node name="WheelRL" type="RayCast3D" parent="." unique_id=322867945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739, 0.078, 1.106)
+enabled = false
+script = ExtResource("5_rah24")
+isMotor = true
+
+[node name="Wheel" type="MeshInstance3D" parent="WheelRL" unique_id=390942068]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_46faf")
+mesh = SubResource("CylinderMesh_1cwr0")
+
+[node name="WheelFR" type="RayCast3D" parent="." unique_id=1218079985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.746, 0.078, -1.163)
+enabled = false
+script = ExtResource("5_rah24")
+
+[node name="Wheel" type="MeshInstance3D" parent="WheelFR" unique_id=1301606007]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_46faf")
+mesh = SubResource("CylinderMesh_1cwr0")
+
+[node name="WheelRR" type="RayCast3D" parent="." unique_id=412268474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.746, 0.078, 1.106)
+enabled = false
+script = ExtResource("5_rah24")
+isMotor = true
+
+[node name="Wheel" type="MeshInstance3D" parent="WheelRR" unique_id=117393057]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_46faf")
+mesh = SubResource("CylinderMesh_1cwr0")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=509668309]
+transform = Transform3D(0.7549158, 0, 0.65582186, 0, 1, 0, -0.65582186, 0, 0.7549158, 1.0387051e-07, 1.370693, 1.1881402)
+shape = SubResource("SeparationRayShape3D_efdnf")
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=1110570697]
+doppler_tracking = 2
+current = true
+fov = 120.0
+far = 1072.56
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1829317955]
+transform = Transform3D(0.7549158, 0, 0.65582186, 0, 1, 0, -0.65582186, 0, 0.7549158, 1.0387051e-07, 1.370693, 1.1881402)
+remote_path = NodePath("../SpringArm3D")
+update_scale = false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://civartjdr351g"
+path="res://.godot/imported/SR_Env_Concrete_Track_Straight_Skids_End.obj-7d7656c6141fe1fc95df385fd8eac7f0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Env_Concrete_Track_Straight_Skids_End.obj-7d7656c6141fe1fc95df385fd8eac7f0.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Env_Concrete_Track_Straight_Skids_End.obj"
+dest_files=["res://.godot/imported/SR_Env_Concrete_Track_Straight_Skids_End.obj-7d7656c6141fe1fc95df385fd8eac7f0.mesh", "res://.godot/imported/SR_Env_Concrete_Track_Straight_Skids_End.obj-7d7656c6141fe1fc95df385fd8eac7f0.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

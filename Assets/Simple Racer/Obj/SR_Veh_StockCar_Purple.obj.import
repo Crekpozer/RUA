@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4j7owq54s0jp"
+path="res://.godot/imported/SR_Veh_StockCar_Purple.obj-dc72cd794264f5fab115c75c797e228d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Veh_StockCar_Purple.obj-dc72cd794264f5fab115c75c797e228d.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Veh_StockCar_Purple.obj"
+dest_files=["res://.godot/imported/SR_Veh_StockCar_Purple.obj-dc72cd794264f5fab115c75c797e228d.mesh", "res://.godot/imported/SR_Veh_StockCar_Purple.obj-dc72cd794264f5fab115c75c797e228d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

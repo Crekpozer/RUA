@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q5jeg6i4rk8l"
+path="res://.godot/imported/SR_Prop_Sign_Checker.obj-1ed885178d4dbc11c53ac118960d1d09.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SR_Prop_Sign_Checker.obj-1ed885178d4dbc11c53ac118960d1d09.mesh"]
+
+source_file="res://Assets/Simple Racer/Obj/SR_Prop_Sign_Checker.obj"
+dest_files=["res://.godot/imported/SR_Prop_Sign_Checker.obj-1ed885178d4dbc11c53ac118960d1d09.mesh", "res://.godot/imported/SR_Prop_Sign_Checker.obj-1ed885178d4dbc11c53ac118960d1d09.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

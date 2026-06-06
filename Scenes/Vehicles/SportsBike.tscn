@@ -9,8 +9,8 @@ friction = 0.53
 bounce = 0.05
 
 [sub_resource type="Curve" id="Curve_f0imt"]
-_data = [Vector2(0, 0.8423374), 0.0, 1.4, 0, 0, Vector2(0.4606741, 0.71334076), 0.0, 0.0, 0, 0, Vector2(0.4634831, 1), 0.0, 0.0, 0, 0, Vector2(0.72752804, 0.5198457), 0.0, 0.0, 0, 0, Vector2(0.72753805, 0.92116874), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, 0.9068358), 0.0, 1.4, 0, 0, Vector2(0.28932583, 0.31918418), 0.0, 0.0, 0, 0, Vector2(0.32865167, 0.8351709), 0.0, 0.0, 0, 0, Vector2(0.4747191, 0.26185232), 0.0, 0.0, 0, 0, Vector2(0.48033708, 0.7993385), 0.0, 0.0, 0, 0, Vector2(0.62640446, 0.26901883), 0.0, 0.0, 0, 0, Vector2(0.62921345, 0.6918413), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 8
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7wwb2"]
 _surfaces = [{
@@ -117,23 +117,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_41hpa")
 
-[sub_resource type="Animation" id="Animation_c4n40"]
-resource_name = "Take 001"
-length = 1.25
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6npn"]
-_data = {
-&"Take 001": SubResource("Animation_c4n40")
-}
-
-[node name="SportsBike" type="RigidBody3D" unique_id=1819788537 node_paths=PackedStringArray("wheels")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+[node name="SportsBike" type="RigidBody3D" unique_id=1819788537 node_paths=PackedStringArray("wheels", "visualMesh", "collisionShape")]
 axis_lock_angular_x = true
 mass = 50.0
 physics_material_override = SubResource("PhysicsMaterial_efdnf")
 center_of_mass_mode = 1
 script = ExtResource("1_ncaru")
 wheels = [NodePath("WheelF"), NodePath("WheelR")]
+visualMesh = NodePath("SRVehMotorBikeGreen")
+collisionShape = NodePath("CollisionShape3D")
 acceleration = 200.0
 accelerationCurve = SubResource("Curve_f0imt")
 
@@ -167,18 +159,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.02
 mesh = SubResource("ArrayMesh_f4uvs")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1829317955]
-transform = Transform3D(0.7549158, 0, 0.65582186, 0, 1, 0, -0.65582186, 0, 0.7549158, 1.0387051e-07, 1.370693, 1.1881402)
-remote_path = NodePath("../RayCast3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1881693e-07, 3.258315, 5.934574)
+remote_path = NodePath("../Camera3D")
 update_scale = false
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=863908348]
-transform = Transform3D(0.7549158, 0, 0.65582186, 0, 1, 0, -0.65582186, 0, 0.7549158, 1.0387051e-07, 1.370693, 1.1881402)
-
-[node name="Camera3D" type="Camera3D" parent="RayCast3D" unique_id=1104985571]
-transform = Transform3D(0.7771018, 0, -0.6293748, 0, 1, 0, 0.6293748, 0, 0.7771018, -0.6456178, 0.4567063, 2.9413784)
-
-[node name="SR_Veh_MotorBike_Green" type="Node3D" parent="." unique_id=2128263979]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.074635, 0, -0.056925353)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SR_Veh_MotorBike_Green" unique_id=349970579]
-libraries/ = SubResource("AnimationLibrary_j6npn")
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1148979407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1881693e-07, 3.258315, 5.934574)

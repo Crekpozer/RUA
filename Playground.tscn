@@ -104,4 +104,4 @@ text = "*"
 
 [node name="SportsBike" parent="." unique_id=1819788537 instance=ExtResource("3_1cwr0")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4523296, 0.23262691, 86.7546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.477024, 0.23262644, 85.42101)

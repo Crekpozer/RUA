@@ -32,4 +32,4 @@ func _process(_delta: float) -> void:
 	msVelocity = vehicleReference.velocity
 	kmVelocityValue = msVelocity * 3.6
 	formatedVelocity = "%.1f" %kmVelocityValue
-	kmVelocityValueLable.text = formatedVe
+	kmVelocityValueLable.text = formatedVelocity

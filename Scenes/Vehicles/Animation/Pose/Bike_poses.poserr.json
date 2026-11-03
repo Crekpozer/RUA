@@ -1,0 +1,412 @@
+{
+  "app": "poserr",
+  "version": 2,
+  "name": "Bike_poses",
+  "active": 0,
+  "figures": [
+    {
+      "name": "Figure 1",
+      "model": "Y Bot",
+      "anim": "Walking",
+      "pose": {
+        "Hips": [
+          46,
+          0,
+          0
+        ],
+        "Spine": [
+          24,
+          0,
+          0
+        ],
+        "Spine1": [
+          5,
+          0,
+          0
+        ],
+        "Neck": [
+          -35,
+          0,
+          0
+        ],
+        "LeftArm": [
+          88.5,
+          -6.6,
+          59
+        ],
+        "LeftForeArm": [
+          -41.7,
+          -8.1,
+          90.6
+        ],
+        "LeftHand": [
+          -33,
+          26,
+          44
+        ],
+        "LeftHandRing1": [
+          15.8,
+          0,
+          0
+        ],
+        "LeftHandRing2": [
+          15.8,
+          0,
+          0
+        ],
+        "LeftHandRing3": [
+          14.4,
+          0,
+          0
+        ],
+        "LeftHandMiddle1": [
+          65,
+          3,
+          0
+        ],
+        "LeftHandMiddle2": [
+          15.8,
+          0,
+          0
+        ],
+        "LeftHandMiddle3": [
+          67,
+          0,
+          0
+        ],
+        "LeftHandThumb1": [
+          0.4,
+          -3.5,
+          -5.8
+        ],
+        "LeftHandThumb2": [
+          0,
+          0,
+          -11.7
+        ],
+        "LeftHandThumb3": [
+          0,
+          0,
+          -9.9
+        ],
+        "LeftHandIndex1": [
+          42.4,
+          -0.9,
+          2
+        ],
+        "LeftHandIndex2": [
+          18,
+          5.9,
+          -11.6
+        ],
+        "LeftHandIndex3": [
+          61,
+          0,
+          0
+        ],
+        "LeftHandPinky1": [
+          15.8,
+          0,
+          0
+        ],
+        "LeftHandPinky2": [
+          15.8,
+          0,
+          0
+        ],
+        "LeftHandPinky3": [
+          14.4,
+          0,
+          0
+        ],
+        "RightArm": [
+          88.5,
+          6.6,
+          -59
+        ],
+        "RightForeArm": [
+          -41.7,
+          8.1,
+          -90.6
+        ],
+        "RightHand": [
+          -33,
+          -26,
+          -44
+        ],
+        "RightHandThumb1": [
+          0.4,
+          3.5,
+          5.8
+        ],
+        "RightHandThumb2": [
+          0,
+          0,
+          11.7
+        ],
+        "RightHandThumb3": [
+          0,
+          0,
+          9.9
+        ],
+        "RightHandIndex1": [
+          42.4,
+          0.9,
+          -2
+        ],
+        "RightHandIndex2": [
+          18,
+          -5.9,
+          11.6
+        ],
+        "RightHandIndex3": [
+          61,
+          0,
+          0
+        ],
+        "RightHandMiddle1": [
+          65,
+          -3,
+          0
+        ],
+        "RightHandMiddle2": [
+          15.8,
+          0,
+          0
+        ],
+        "RightHandMiddle3": [
+          67,
+          0,
+          0
+        ],
+        "RightHandRing1": [
+          15.8,
+          0,
+          0
+        ],
+        "RightHandRing2": [
+          15.8,
+          0,
+          0
+        ],
+        "RightHandRing3": [
+          14.4,
+          0,
+          0
+        ],
+        "RightHandPinky1": [
+          15.8,
+          0,
+          0
+        ],
+        "RightHandPinky2": [
+          15.8,
+          0,
+          0
+        ],
+        "RightHandPinky3": [
+          14.4,
+          0,
+          0
+        ],
+        "LeftUpLeg": [
+          103.5,
+          -25.7,
+          23.2
+        ],
+        "LeftLeg": [
+          -127.8,
+          -15.4,
+          28.7
+        ],
+        "LeftFoot": [
+          60,
+          0,
+          0
+        ],
+        "RightUpLeg": [
+          103.5,
+          25.7,
+          -23.2
+        ],
+        "RightLeg": [
+          -127.8,
+          15.4,
+          -28.7
+        ],
+        "RightFoot": [
+          48.6,
+          -18.1,
+          -14.9
+        ],
+        "__hips": [
+          0,
+          81.08,
+          -8.23
+        ]
+      },
+      "spread": {
+        "shoulders": 0.5,
+        "clavicles": 0,
+        "hips": 0
+      },
+      "heightOffset": 0,
+      "scale": 1.06,
+      "hidden": false,
+      "pos": [
+        8.108414112939484e-9,
+        -5.813688039779661e-8
+      ],
+      "prop": {
+        "name": "None",
+        "side": "Right",
+        "pos": [
+          0,
+          0,
+          0
+        ],
+        "rot": [
+          0,
+          0,
+          0
+        ],
+        "scale": 100
+      }
+    }
+  ],
+  "lights": [],
+  "sceneProps": [
+    {
+      "name": "Bike body",
+      "kind": "Box",
+      "hidden": false,
+      "pos": [
+        -0.010752789253412054,
+        0.54,
+        0.2
+      ],
+      "rot": [
+        0,
+        0,
+        -0.028639409296412528
+      ],
+      "scale": [
+        0.56,
+        0.81,
+        1.71
+      ]
+    },
+    {
+      "name": "Handle",
+      "kind": "Cylinder",
+      "hidden": false,
+      "pos": [
+        -0.005920571826558085,
+        0.7945603756531572,
+        0.63
+      ],
+      "rot": [
+        0,
+        0,
+        -1.5617206146845262
+      ],
+      "scale": [
+        0.06,
+        1,
+        0.06
+      ]
+    },
+    {
+      "name": "Box 4",
+      "kind": "Box",
+      "hidden": false,
+      "pos": [
+        -0.01217638022109524,
+        0.36947282682921917,
+        -0.25551458324976006
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1.3483752371400957,
+        0.11,
+        0.11
+      ]
+    },
+    {
+      "name": "BackWheel",
+      "kind": "Cylinder",
+      "hidden": false,
+      "pos": [
+        -0.010453455979013662,
+        0.4,
+        -0.742380805337227
+      ],
+      "rot": [
+        0,
+        0,
+        1.5707963267948966
+      ],
+      "scale": [
+        0.7018482959815123,
+        0.21,
+        0.7927106478411555
+      ]
+    },
+    {
+      "name": "Box 6",
+      "kind": "Box",
+      "hidden": false,
+      "pos": [
+        -0.006965265871552523,
+        0.4280250964437377,
+        -0.43569459647148173
+      ],
+      "rot": [
+        -0.18441587923489045,
+        0,
+        0
+      ],
+      "scale": [
+        0.5246335408930011,
+        0.21123120826848812,
+        1.430551008212471
+      ]
+    }
+  ],
+  "view": {
+    "theme": "dark",
+    "chk-grid": true,
+    "chk-ground": true,
+    "chk-shadow": true,
+    "chk-sky": false,
+    "chk-hdr": true,
+    "chk-bw": false,
+    "chk-outline": false,
+    "chk-reveal": true,
+    "chk-skeleton": true,
+    "chk-com": true,
+    "chk-mirror": true,
+    "chk-ik": true,
+    "chk-feet": false,
+    "chk-hands": false,
+    "chk-joints": true,
+    "chk-orbit": false,
+    "sel-sky": "belfast_sunset_puresky_2k",
+    "sel-shading": "standard",
+    "clr-bg": "#0c0f14",
+    "clr-ground": "#10141b",
+    "clr-sun": "#ffffff",
+    "clr-amb": "#ffffff",
+    "rng-focal": "35",
+    "rng-sun-az": "35",
+    "rng-sun-el": "46",
+    "rng-sun-int": "2.2",
+    "rng-amb-int": "0.55",
+    "rng-orbit-speed": "2"
+  },
+  "savedAt": "2026-06-15T15:29:43.764Z"
+}

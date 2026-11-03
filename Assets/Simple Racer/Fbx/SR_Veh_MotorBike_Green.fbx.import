@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/SR_Veh_MotorBike_Green.fbx-e262e03c13868f58a7
 nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=100.0
 nodes/import_as_skeleton_bones=false
@@ -34,15 +36,15 @@ animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=0
-materials/extract_format=0
-materials/extract_path=""
+materials/extract=2
+materials/extract_format=2
+materials/extract_path="res://Materials"
 _subresources={
 "materials": {
 "lambert1": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/SimpleRacer_Material.tres",
-"use_external/path": "uid://c6gl7t1poe2fu"
+"use_external/fallback_path": "res://Materials/lambert1.material",
+"use_external/path": "uid://dajh6rrpljjj7"
 }
 }
 }

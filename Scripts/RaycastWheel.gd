@@ -9,5 +9,7 @@ class_name RaycastWheel
 
 @export var isMotor : bool = false # Indica se a roda impulsiona o carro ou não
 
+@export var wheel : Node3D # Pega o primeiro filho na lista, a roda
 
-@onready var wheel : Node3D = get_child(0) # Pega o primeiro filho na lista, a roda
+func _ready() -> void:
+	target_position = Vector3(0, -(restDistance + wheelRadius + overExtend), 0)

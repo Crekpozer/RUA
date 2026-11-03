@@ -9,7 +9,7 @@ friction = 0.53
 bounce = 0.05
 
 [sub_resource type="Curve" id="Curve_f0imt"]
-_data = [Vector2(0, 0.9068358), 0.0, 1.4, 0, 0, Vector2(0.28932583, 0.31918418), 0.0, 0.0, 0, 0, Vector2(0.32865167, 0.8351709), 0.0, 0.0, 0, 0, Vector2(0.4747191, 0.26185232), 0.0, 0.0, 0, 0, Vector2(0.48033708, 0.7993385), 0.0, 0.0, 0, 0, Vector2(0.62640446, 0.26901883), 0.0, 0.0, 0, 0, Vector2(0.62921345, 0.6918413), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(0.252809, 0.1428572), 0.0, 0.0, 0, 0, Vector2(0.25842696, 0.84285724), 0.0, 0.0, 0, 0, Vector2(0.4747191, 0.26185232), 0.0, 0.0, 0, 0, Vector2(0.48033708, 0.7993385), 0.0, 0.0, 0, 0, Vector2(0.62640446, 0.26901883), 0.0, 0.0, 0, 0, Vector2(0.62921345, 0.6918413), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 8
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7wwb2"]
@@ -45,9 +45,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7wwb2")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tl3f6"]
-points = PackedVector3Array(0.25690475, 2.0950437, 1.0480363, -0.3946788, 0.25688887, -0.71383846, -0.46993372, 0.63849944, -0.87658703, 0.21916886, 1.6522259, -1.7745044, 0.35889998, 0.3261494, 0.72973156, -0.56221104, 1.6522259, 0.7930555, -0.28309995, 0.42461234, 1.3511903, -0.1714118, 1.8197582, -1.7745044, 0.3865918, 0.25688887, -0.71383846, 0.5542333, 1.8197582, 0.56959176, 0.21916886, 1.0943588, 1.686211, -0.4777, 0.99717975, -1.6265279, -0.3946788, 2.0989785, 1.0161695, 0.27501294, 0.48045647, -1.3279266, 0.21916886, 2.2106667, 0.7930555, -0.22725587, 1.0943588, 1.686211, 0.33074772, 0.48045647, 1.406794, -0.50636697, 1.2615086, -1.6629474, 0.16332479, 1.8197582, -1.8304578, -0.22725587, 1.038706, -1.7745044, -0.56221104, 1.8197582, 0.56959176, 0.5542333, 1.6522259, 0.7930555, -0.1714118, 2.2106667, 0.68114877, 0.26188606, 1.8454047, 1.3358955, -0.35889998, 0.34635094, 0.7112616, -0.22039999, 0.50358874, -1.2902237, -0.16376217, 1.7929845, 1.3913401, 0.3865918, 2.0989785, 1.0161695, 0.35889998, 1.4669039, 1.4039292, -0.22725587, 0.9828619, 1.686211, -0.33883473, 2.1548226, 0.90461254, -0.32078177, 1.523999, 1.4314243)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rke5m"]
 _surfaces = [{
@@ -117,51 +114,65 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_41hpa")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tl3f6"]
+points = PackedVector3Array(0.25690475, 2.0950437, 1.0480363, -0.3946788, 0.25688887, -0.71383846, -0.46993372, 0.63849944, -0.87658703, 0.21916886, 1.6522259, -1.7745044, 0.35889998, 0.3261494, 0.72973156, -0.56221104, 1.6522259, 0.7930555, -0.28309995, 0.42461234, 1.3511903, -0.1714118, 1.8197582, -1.7745044, 0.3865918, 0.25688887, -0.71383846, 0.5542333, 1.8197582, 0.56959176, 0.21916886, 1.0943588, 1.686211, -0.4777, 0.99717975, -1.6265279, -0.3946788, 2.0989785, 1.0161695, 0.27501294, 0.48045647, -1.3279266, 0.21916886, 2.2106667, 0.7930555, -0.22725587, 1.0943588, 1.686211, 0.33074772, 0.48045647, 1.406794, -0.50636697, 1.2615086, -1.6629474, 0.16332479, 1.8197582, -1.8304578, -0.22725587, 1.038706, -1.7745044, -0.56221104, 1.8197582, 0.56959176, 0.5542333, 1.6522259, 0.7930555, -0.1714118, 2.2106667, 0.68114877, 0.26188606, 1.8454047, 1.3358955, -0.35889998, 0.34635094, 0.7112616, -0.22039999, 0.50358874, -1.2902237, -0.16376217, 1.7929845, 1.3913401, 0.3865918, 2.0989785, 1.0161695, 0.35889998, 1.4669039, 1.4039292, -0.22725587, 0.9828619, 1.686211, -0.33883473, 2.1548226, 0.90461254, -0.32078177, 1.523999, 1.4314243)
+
 [node name="SportsBike" type="RigidBody3D" unique_id=1819788537 node_paths=PackedStringArray("wheels", "visualMesh", "collisionShape")]
-axis_lock_angular_x = true
-mass = 50.0
+mass = 500.0
 physics_material_override = SubResource("PhysicsMaterial_efdnf")
 center_of_mass_mode = 1
 script = ExtResource("1_ncaru")
-wheels = [NodePath("WheelF"), NodePath("WheelR")]
+wheels = [NodePath("SRVehMotorBikeGreen/WheelF"), NodePath("SRVehMotorBikeGreen/WheelR")]
+leanAmount = 0.5
+lowSpeedTurnFactor = 1.0
 visualMesh = NodePath("SRVehMotorBikeGreen")
 collisionShape = NodePath("CollisionShape3D")
-acceleration = 200.0
+rollStiffness = 10000.0
+rollDamping = 4000.0
+blendStartSpeed = 8.0
+blendFullSpeed = 18.0
+acceleration = 4500.0
+deceleration = 1000.0
+maxSpeed = 35.0
 accelerationCurve = SubResource("Curve_f0imt")
 
 [node name="SRVehMotorBikeGreen" type="MeshInstance3D" parent="." unique_id=1998511723]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jt472")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=704169210]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_tl3f6")
-
-[node name="WheelF" type="RayCast3D" parent="." unique_id=655667928]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.5600462, -1.333)
+[node name="WheelF" type="RayCast3D" parent="SRVehMotorBikeGreen" unique_id=655667928 node_paths=PackedStringArray("wheel")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.060000114, 0.5600462, 1.333)
 enabled = false
+debug_shape_custom_color = Color(0.9843137, 0, 0, 1)
+debug_shape_thickness = 5
 script = ExtResource("4_0ciki")
+springStrength = 30000.0
+springDamping = 4000.0
+restDistance = 0.2
 wheelRadius = 0.5
+wheel = NodePath("Wheel")
 
-[node name="Wheel" type="MeshInstance3D" parent="WheelF" unique_id=290706108]
+[node name="Wheel" type="MeshInstance3D" parent="SRVehMotorBikeGreen/WheelF" unique_id=290706108]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.059999026, -0.18694878, 0.015181422)
 mesh = SubResource("ArrayMesh_muo8i")
 
-[node name="WheelR" type="RayCast3D" parent="." unique_id=322867945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023374531, 0.56027216, 1.3186617)
+[node name="WheelR" type="RayCast3D" parent="SRVehMotorBikeGreen" unique_id=322867945 node_paths=PackedStringArray("wheel")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.023374647, 0.56027216, -1.3186617)
 enabled = false
+debug_shape_custom_color = Color(0.9843137, 0, 0, 1)
+debug_shape_thickness = 5
 script = ExtResource("4_0ciki")
+springStrength = 30000.0
+springDamping = 4000.0
+restDistance = 0.2
 wheelRadius = 0.5
 isMotor = true
+wheel = NodePath("Wheel")
 
-[node name="Wheel" type="MeshInstance3D" parent="WheelR" unique_id=41547950]
+[node name="Wheel" type="MeshInstance3D" parent="SRVehMotorBikeGreen/WheelR" unique_id=41547950]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.023375727, -0.14354783, -0.0697633)
 mesh = SubResource("ArrayMesh_f4uvs")
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1829317955]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1881693e-07, 3.258315, 5.934574)
-remote_path = NodePath("../Camera3D")
-update_scale = false
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1148979407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1881693e-07, 3.258315, 5.934574)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=704169210]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.30662274, 0)
+shape = SubResource("ConvexPolygonShape3D_tl3f6")

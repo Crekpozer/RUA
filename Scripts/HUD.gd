@@ -9,9 +9,14 @@ extends CanvasLayer
 @onready var leanRightBar : ProgressBar = %LeanRightBar
 @onready var turnRatioBar : ProgressBar = %TurnRatioBar
 
+func _ready() -> void:
+	var maxLeanDeg := rad_to_deg(vehicle.leanAmount) * 1.3
+	leanLeftBar.max_value = maxLeanDeg
+	leanRightBar.max_value = maxLeanDeg
+
 func _process(_delta: float) -> void:
 	motorInputText.text = str(vehicle.motorInput)
-	groundedText.text = "Sim" if vehicle.grounded else "Não"
+	groundedText.text = "Yes" if vehicle.grounded else "No"
 	accelerationText.text = "%.1f" % vehicle.currentAccelerationForce
 	velocityText.text = "%.1f" % (vehicle.currentSpeed * 3.6)
 	

@@ -9,7 +9,10 @@ class_name SportsBike
 @export var turnSpeed : float = 3.0
 @export var leanAmount : float = 0.4
 @export var steerSmoothing : float = 6.0
-@export var lowSpeedTurnFactor : float = 0.8
+@export var lowSpeedTurnFactor : float = 0.0
+@export var wheelbase : float = 1.4
+@export var pathSteerRatio : float = 0.35
+@export var maxLateralAccel : float = 9.0
 
 @export var visualMesh : Node3D
 @export var collisionShape : CollisionShape3D
@@ -33,6 +36,16 @@ var headingAngle : float = 0.0 # Direção para onde está indo
 @export var deceleration : float = 200.0
 @export var maxSpeed : float = 20.0 # 20 m/s = 72 km/h
 @export var accelerationCurve : Curve
+@export var brakeForce : float = 6000.0
+@export var brakeMinSpeed : float = 0.5
+@export var maxReverseSpeed : float = 5.0
+var forceAtGround : float = 3.0
+
+@export_category("Guidão")
+@export var handlebar : Node3D
+@export var maxHandlebarAngle : float = 1.0
+@export var handlebarSpeed : float = 10.0
+@export var handlebarFadeSpeed : float = 20.0
 
 var currentAccelerationForce : float = 0.0
 var motorInput : float = 0.0
@@ -74,12 +87,18 @@ func _physics_process(delta: float) -> void:
 		DoSingleWheelSuspension(wheel)
 		DoSingleWheelAcceleration(wheel, delta)
 	
+	# Ângulo de direção, usado pelo guidão e pela curva
+	var speedFade := 1.0 - clampf(absf(currentSpeed) / handlebarFadeSpeed, 0.0, 1.0) * 0.8
+	var steerAngle := steerInput * maxHandlebarAngle * speedFade
+	
 	if grounded:
-		var speedFactor := lerpf(lowSpeedTurnFactor, 1.0, clampf(absf(currentSpeed) / 5.0, 0.0, 1.0))
 		var reverseSign := -1.0 if currentSpeed < -0.1 else 1.0
 		
-		# Giro direto pelo código, em rad/s
-		directTurnRate = steerInput * turnSpeed * speedFactor * reverseSign
+		# Giro pelo ângulo do guidão (na ré inverte sozinho, pelo sinal da velocidade)
+		var rawTurnRate := currentSpeed * tan(steerAngle * pathSteerRatio) / wheelbase
+		var turnLimit := maxLateralAccel / maxf(absf(currentSpeed), 1.0)
+		directTurnRate = clampf(rawTurnRate, -turnLimit, turnLimit)
+		
 		# Giro que a inclinação real do corpo produziria, em rad/s
 		leanTurnRate = 9.8 * tan(rotation.z) / maxf(absf(currentSpeed), 1.0)
 		# Quanto a inclinação comanda a curva (0 a 1)
@@ -104,7 +123,9 @@ func _physics_process(delta: float) -> void:
 		apply_torque(global_basis.z * rollTorque)
 		
 		linear_velocity -= rightDirection * linear_velocity.dot(rightDirection)
-
+	
+		if handlebar:
+			handlebar.rotation.y = lerp_angle(handlebar.rotation.y, steerAngle, delta * handlebarSpeed)
 
 # Calcula a velocidade relativa para aplicar o amortecimento
 func GetPointVelocity(point: Vector3) -> Vector3:
@@ -115,21 +136,34 @@ func DoSingleWheelAcceleration(ray : RaycastWheel, delta : float) -> void:
 	var wheelSpeed := forwardDirection.dot(linear_velocity)
 	
 	if ray.wheel:
-				ray.wheel.rotate_x(-wheelSpeed * delta / ray.wheelRadius)
+		ray.wheel.rotate_x(-wheelSpeed * delta / ray.wheelRadius)
 	
-	if ray.is_colliding() and ray.isMotor:
-		var contact := ray.wheel.global_position
-		var forcePosition := contact - global_position
-		
-		if motorInput != 0:
-			var speedRatio := wheelSpeed / maxSpeed
-			speedRatio = clampf(speedRatio, 0.0, 1.0)
-			currentAccelerationForce = accelerationCurve.sample_baked(speedRatio)
-			var forceVector := forwardDirection * acceleration * motorInput * currentAccelerationForce
-			apply_force(forceVector, forcePosition)
-		elif abs(wheelSpeed) > 0.02 and motorInput == 0:
-			var dragForceVector = global_basis.z * deceleration * signf(wheelSpeed)
-			apply_force(dragForceVector, forcePosition)
+	if not ray.is_colliding():
+		return
+	
+	var wheelCenter := ray.wheel.global_position if ray.wheel else ray.global_position
+	var forcePoint := wheelCenter.lerp(ray.get_collision_point(), forceAtGround)
+	var forcePosition := forcePoint - global_position
+	
+	# Freio: age em todas as rodas, contra o movimento
+	if motorInput < 0.0 and wheelSpeed > brakeMinSpeed:
+		var brakeVector := -forwardDirection * brakeForce * absf(motorInput) / wheels.size()
+		apply_force(brakeVector, forcePosition)
+		return
+	
+	# Motor: só a roda motriz
+	if not ray.isMotor:
+		return
+	
+	if motorInput != 0.0:
+		# Limite da ré
+		if motorInput < 0.0 and wheelSpeed < -maxReverseSpeed:
+			return
+		var speedRatio := clampf(wheelSpeed / maxSpeed, 0.0, 1.0)
+		currentAccelerationForce = accelerationCurve.sample_baked(speedRatio)
+		apply_force(forwardDirection * acceleration * motorInput * currentAccelerationForce, forcePosition)
+	elif absf(wheelSpeed) > 0.02:
+		apply_force(global_basis.z * deceleration * signf(wheelSpeed), forcePosition)
 
 func DoSingleWheelSuspension(ray : RaycastWheel) -> void:
 	

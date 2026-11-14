@@ -26,6 +26,7 @@ class_name SportsBike
 @export var blendStartSpeed : float = 4.0
 @export var blendFullSpeed : float = 10.0
 @export var leanTurnGain : float = 4.0
+var currentTurnRate : float = 0.0
 
 var steerInput : float = 0.0
 var headingAngle : float = 0.0 # Direção para onde está indo
@@ -39,13 +40,16 @@ var headingAngle : float = 0.0 # Direção para onde está indo
 @export var brakeForce : float = 6000.0
 @export var brakeMinSpeed : float = 0.5
 @export var maxReverseSpeed : float = 5.0
-var forceAtGround : float = 3.0
+@export var forceAtGround : float = 1.5
 
 @export_category("Guidão")
 @export var handlebar : Node3D
 @export var maxHandlebarAngle : float = 1.0
 @export var handlebarSpeed : float = 10.0
 @export var handlebarFadeSpeed : float = 20.0
+
+@export_category("Luzes")
+@export var brakeLightNode : Node3D
 
 var currentAccelerationForce : float = 0.0
 var motorInput : float = 0.0
@@ -56,8 +60,11 @@ var leanTurnRate : float = 0.0
 var leanBlend : float = 0.0
 
 func _ready() -> void:
+	
 	center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 	center_of_mass = Vector3(0, -0.2, 0)
+	
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -104,11 +111,12 @@ func _physics_process(delta: float) -> void:
 		# Quanto a inclinação comanda a curva (0 a 1)
 		leanBlend = clampf(inverse_lerp(blendStartSpeed, blendFullSpeed, absf(currentSpeed)), 0.0, 1.0) * leanTurnInfluence
 		
-		var finalTurnRate := lerpf(directTurnRate, leanTurnRate * leanTurnGain * reverseSign, leanBlend)
-		headingAngle += finalTurnRate * delta
+		currentTurnRate = lerpf(directTurnRate, leanTurnRate * leanTurnGain * reverseSign, leanBlend)
+		headingAngle += currentTurnRate * delta
 		rotation.y = headingAngle
 	else:
 		headingAngle = rotation.y
+		currentTurnRate = 0.0
 	
 	# Trava da velocidade em trilho
 	# Trava da velocidade em trilho (mantém a velocidade vertical)
@@ -126,6 +134,9 @@ func _physics_process(delta: float) -> void:
 	
 		if handlebar:
 			handlebar.rotation.y = lerp_angle(handlebar.rotation.y, steerAngle, delta * handlebarSpeed)
+	
+	if brakeLightNode:
+		brakeLightNode.visible = motorInput < 0.0 and currentSpeed > brakeMinSpeed
 
 # Calcula a velocidade relativa para aplicar o amortecimento
 func GetPointVelocity(point: Vector3) -> Vector3:
@@ -171,10 +182,13 @@ func DoSingleWheelSuspension(ray : RaycastWheel) -> void:
 		var contact := ray.get_collision_point()
 		var springUpDirection := ray.global_transform.basis.y
 		var springLength := ray.global_position.distance_to(contact) - ray.wheelRadius
+		if Engine.get_physics_frames() % 30 == 0:
+			var worldLen := (ray.to_global(ray.target_position) - ray.global_position).length()
+			print(ray.name, " raio no mundo: ", snappedf(worldLen, 0.001), " | escala: ", ray.global_basis.get_scale())
 		var offset := ray.restDistance - springLength
 		
 		if ray.wheel:
-			ray.wheel.position.y = -springLength
+			ray.wheel.global_position = ray.global_position - ray.global_basis.y * springLength
 		
 		var springForce := maxf(ray.springStrength * offset, 0.0)
 		
@@ -190,4 +204,5 @@ func DoSingleWheelSuspension(ray : RaycastWheel) -> void:
 		apply_force(forceVector, forcePositionOffset)
 		
 	elif ray.wheel:
-		ray.wheel.position.y = lerpf(ray.wheel.position.y, -(ray.restDistance + ray.overExtend), 0.8)
+		var extended := ray.global_position - ray.global_basis.y * (ray.restDistance + ray.overExtend)
+		ray.wheel.global_position = ray.wheel.global_position.lerp(extended, 0.8)

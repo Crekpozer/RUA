@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var leanLeftBar : ProgressBar = %LeanLeftBar
 @onready var leanRightBar : ProgressBar = %LeanRightBar
 @onready var turnRatioBar : ProgressBar = %TurnRatioBar
+@onready var turnRadiusText : Label = %TurnRadiusLabelText
 
 func _ready() -> void:
 	var maxLeanDeg := rad_to_deg(vehicle.leanAmount) * 1.3
@@ -25,3 +26,8 @@ func _process(_delta: float) -> void:
 	leanRightBar.value = maxf(-rollDeg, 0.0)
 	
 	turnRatioBar.value = vehicle.leanBlend
+	
+	if absf(vehicle.currentTurnRate) > 0.02:
+		turnRadiusText.text = "%.0f m" % (absf(vehicle.currentSpeed) / absf(vehicle.currentTurnRate))
+	else:
+		turnRadiusText.text = "-"

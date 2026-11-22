@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5eyx3gq7l3m6" path="res://Scripts/RaycastCar.gd" id="1_ncaru"]
 [ext_resource type="Script" uid="uid://3oayr5n77xjd" path="res://Scripts/RaycastWheel.gd" id="4_0ciki"]
+[ext_resource type="PackedScene" uid="uid://53sx2tkra3h5" path="res://Scenes/Piloto/Piloto.tscn" id="4_ncaru"]
 [ext_resource type="Texture2D" uid="uid://c3lpgelhucnbk" path="res://Assets/BitSoft/motorcycle.png" id="4_tl3f6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efdnf"]
@@ -487,6 +488,9 @@ light_color = Color(1, 0.03529412, 0.02745098, 1)
 light_energy = 0.5
 light_size = 1.0
 
+[node name="Piloto" parent="MeshInstance3D" unique_id=624420587 instance=ExtResource("4_ncaru")]
+transform = Transform3D(1, -6.308746e-08, -4.9762157e-08, 3.6526053e-08, 0.9085347, -0.41780934, 7.156918e-08, 0.41780934, 0.9085347, -0.017745627, 0.025292546, -0.7074049)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=905924766]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.064198375, 0)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.0056623816, 0)
 shape = SubResource("ConvexPolygonShape3D_f0imt")

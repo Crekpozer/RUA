@@ -23,10 +23,6 @@ project/assembly_name="Raycast Bikes"
 
 enabled=PackedStringArray("res://addons/road-generator/plugin.cfg")
 
-[filesystem]
-
-import/blender/enabled=false
-
 [input]
 
 accelerate={

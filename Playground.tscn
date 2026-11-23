@@ -91,10 +91,10 @@ script = ExtResource("7_bia53")
 [node name="Statistics" type="CanvasLayer" parent="HUD" unique_id=1017665483]
 
 [node name="ContainerPanel" type="Panel" parent="HUD/Statistics" unique_id=963519956]
-offset_left = 17.0
-offset_top = 24.0
-offset_right = 189.0
-offset_bottom = 134.0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 188.0
+offset_bottom = 142.0
 
 [node name="GridContainer" type="GridContainer" parent="HUD/Statistics/ContainerPanel" unique_id=9232020]
 layout_mode = 1
@@ -157,10 +157,10 @@ layout_mode = 2
 text = "-"
 
 [node name="ContainerPanel2" type="Panel" parent="HUD/Statistics" unique_id=1133595444]
-offset_left = 17.0
-offset_top = 144.0
-offset_right = 277.0
-offset_bottom = 286.0
+offset_left = 15.0
+offset_top = 151.0
+offset_right = 275.0
+offset_bottom = 293.0
 
 [node name="TurnRatioLabel" type="Label" parent="HUD/Statistics/ContainerPanel2" unique_id=890346191]
 layout_mode = 0
@@ -223,21 +223,22 @@ show_percentage = false
 [node name="SportsBike" parent="." unique_id=1819788537 instance=ExtResource("3_1cwr0")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.352184, 0.21949816, 85.42101)
+rollDamping = 4000.0
 deceleration = 500.0
 forceAtGround = 0.2
 
 [node name="RemoteTransform3D2" type="RemoteTransform3D" parent="SportsBike" unique_id=1055799503]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.030902863, 3.5130873, 3.6229324)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.030902863, 2.8934584, 3.6229324)
 remote_path = NodePath("../../PlaygroundCamera")
 update_rotation = false
 update_scale = false
 
 [node name="PlaygroundCamera" type="Node3D" parent="." unique_id=980188612]
-transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.99999964, -9.321281, 3.7325854, 89.043945)
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.99999964, -9.321281, 3.1129565, 89.043945)
 script = ExtResource("4_5ejyp")
 
 [node name="Camera3D" type="Camera3D" parent="PlaygroundCamera" unique_id=73641404]
-transform = Transform3D(0.99995697, 0.002639364, -0.008936475, 0, 0.95904565, 0.28325155, 0.009318092, -0.28323936, 0.9590044, -0.069039345, -1.2052498, -1.5330276)
+transform = Transform3D(0.99964195, 0.008029584, -0.025537506, 0, 0.9539562, 0.29994592, 0.026770104, -0.29983854, 0.95361465, 0.0123176575, -0.23630905, -1.4282913)
 doppler_tracking = 2
 current = true
 fov = 100.0

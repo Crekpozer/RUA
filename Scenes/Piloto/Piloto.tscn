@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://53sx2tkra3h5"]
 
 [ext_resource type="Texture2D" uid="uid://cbpucbvp0h111" path="res://Assets/BitSoft/Heroes/textures/hero_sunglasses.png" id="1_02y8l"]
+[ext_resource type="Script" uid="uid://3co7xn0m00dl" path="res://Scenes/Piloto/piloto.gd" id="1_vmpo2"]
+[ext_resource type="Texture2D" uid="uid://cj1kdi1rfuiy6" path="res://Assets/BitSoft/Heroes/textures/hero_arms3.png" id="3_02y8l"]
 [ext_resource type="Texture2D" uid="uid://cytqp3s0to2d" path="res://Assets/BitSoft/Heroes/textures/hero_mouth.png" id="6_ffqhg"]
+[ext_resource type="Texture2D" uid="uid://bl1l48j6srp2p" path="res://Assets/BitSoft/Heroes/textures/hero_head5.png" id="7_vmpo2"]
 [ext_resource type="Texture2D" uid="uid://6bs0pjpugwkk" path="res://Assets/BitSoft/Heroes/textures/hero_tank_black.png" id="9_xdxsp"]
-[ext_resource type="Texture2D" uid="uid://bqmq51tbj0fix" path="res://Assets/BitSoft/Heroes/textures/hero_arms.png" id="10_pn10c"]
 [ext_resource type="Texture2D" uid="uid://cmpuqek6ibc1g" path="res://Assets/BitSoft/Heroes/textures/hero_pants_colored.png" id="11_dp513"]
 [ext_resource type="Texture2D" uid="uid://coy23coegwr7m" path="res://Assets/BitSoft/Heroes/textures/hero_shoe_color2.png" id="12_x54da"]
-[ext_resource type="Texture2D" uid="uid://ca6n3a1c1lwwj" path="res://Assets/BitSoft/Heroes/textures/hero_head1.png" id="13_6lr1r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvoce"]
 resource_name = "sunglasses"
@@ -60,7 +61,7 @@ metadata/_gltf_primary_texture_coord = 0
 resource_name = "arms 1"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("10_pn10c")
+albedo_texture = ExtResource("3_02y8l")
 roughness = 0.8
 texture_filter = 2
 metadata/_gltf_primary_texture_coord = 0
@@ -97,7 +98,7 @@ metadata/_gltf_primary_texture_coord = 0
 resource_name = "head1"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("13_6lr1r")
+albedo_texture = ExtResource("7_vmpo2")
 roughness = 0.8
 texture_filter = 2
 metadata/_gltf_primary_texture_coord = 0
@@ -353,6 +354,11 @@ bind/46/bone = -1
 bind/46/pose = Transform3D(1, 2.7022615e-08, -2.3688231e-07, -6.57252e-14, 0.99355614, 0.113340795, 2.3841866e-07, -0.113340825, 0.9935562, -4.2821547e-08, -1.6164187, 0.17960618)
 
 [node name="Beat \'Em Up Heroes" type="Node3D" unique_id=624420587]
+script = ExtResource("1_vmpo2")
+seatOffset = Vector3(0, -0.945, -0.105)
+spineWeights = Array[float]([0.9, 0.3, 0.0])
+spineBendDeg = 50.0
+headTiltDeg = -45.0
 
 [node name="rig 1" type="Node3D" parent="." unique_id=1854192863]
 metadata/extras = {
@@ -1050,7 +1056,7 @@ settings/0/additive = false
 transform = Transform3D(-0.9688989, -0.13568738, -0.20693989, 0.016143292, -0.8691417, 0.49429968, -0.2469304, 0.4755857, 0.84430075, 0.39186525, 1.0973026, 0.13352785)
 
 [node name="PoleElbowL" type="Marker3D" parent="." unique_id=172563534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40566158, 1.3290406, -0.062600315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33249712, 1.1779823, -0.062600315)
 
 [node name="TargetHandR" type="Marker3D" parent="." unique_id=724823821]
 transform = Transform3D(-0.9251789, 0.23212162, 0.30027294, 0.25724772, -0.19817236, 0.9458073, 0.279048, 0.9522854, 0.123632185, -0.197775, 1.1294706, 0.25956285)

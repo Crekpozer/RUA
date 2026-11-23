@@ -473,6 +473,12 @@ wheel = NodePath("Wheel")
 transform = Transform3D(-1, -4.500026e-15, -1.509958e-07, 0, 1, -2.9802326e-08, 1.509958e-07, -2.9802326e-08, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_37hv0")
 
+[node name="HandL" type="Marker3D" parent="MeshInstance3D/steer" unique_id=492434308]
+transform = Transform3D(-0.10166205, 0.6346974, -0.76604444, -0.9874138, -0.15815806, 0, -0.121156104, 0.75640285, 0.64278764, 0.26909667, 0.03414172, -0.09801841)
+
+[node name="HandR" type="Marker3D" parent="MeshInstance3D/steer" unique_id=2132630385]
+transform = Transform3D(-0.11161891, -0.63302225, 0.76604444, 0.9848077, -0.1736482, 4.7134776e-09, 0.13302223, 0.7544065, 0.64278764, -0.26909646, 0.032877207, -0.09438819)
+
 [node name="BrakeLight" type="Node3D" parent="MeshInstance3D" unique_id=517965306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00445553, 0.80471134, -1.0541767)
 visible = false
@@ -488,9 +494,34 @@ light_color = Color(1, 0.03529412, 0.02745098, 1)
 light_energy = 0.5
 light_size = 1.0
 
-[node name="Piloto" parent="MeshInstance3D" unique_id=624420587 instance=ExtResource("4_ncaru")]
-transform = Transform3D(1, -6.308746e-08, -4.9762157e-08, 3.6526053e-08, 0.9085347, -0.41780934, 7.156918e-08, 0.41780934, 0.9085347, -0.017745627, 0.025292546, -0.7074049)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=905924766]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.0056623816, 0)
+visible = false
 shape = SubResource("ConvexPolygonShape3D_f0imt")
+
+[node name="Mounts" type="Node3D" parent="." unique_id=1230708919]
+
+[node name="Seat" type="Marker3D" parent="Mounts" unique_id=1662081349]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.908, 0.195)
+
+[node name="FootL" type="Marker3D" parent="Mounts" unique_id=650486309]
+transform = Transform3D(-1, 8.742278e-08, 0, -4.3711385e-08, -0.49999997, -0.86602545, -7.5710346e-08, -0.86602545, 0.49999997, -0.22680998, 0.35751402, 0.2460311)
+
+[node name="FootR" type="Marker3D" parent="Mounts" unique_id=926688696]
+transform = Transform3D(-1, -8.742278e-08, 0, 4.3711385e-08, -0.49999997, -0.86602545, 7.5710346e-08, -0.86602545, 0.49999997, 0.22680998, 0.35751402, 0.24987537)
+
+[node name="KneeL" type="Marker3D" parent="Mounts" unique_id=104231453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28831768, 0.6209781, 0.008238316)
+
+[node name="KneeR" type="Marker3D" parent="Mounts" unique_id=1250364908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28831768, 0.6209781, 0.008238316)
+
+[node name="ElbowL" type="Marker3D" parent="Mounts" unique_id=1282421558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38057935, 0.7150279, 0.08457321)
+
+[node name="ElbowR" type="Marker3D" parent="Mounts" unique_id=1510616216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36520252, 0.7150279, 0.08457321)
+
+[node name="Piloto" parent="." unique_id=624420587 node_paths=PackedStringArray("bike") instance=ExtResource("4_ncaru")]
+transform = Transform3D(-1, 7.1054274e-15, -8.742277e-08, 3.6526053e-08, 0.9085347, -0.41780934, 7.942662e-08, -0.41780934, -0.9085347, 0.017745733, 0.025292546, 0.7074049)
+bike = NodePath("..")

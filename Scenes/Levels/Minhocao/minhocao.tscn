@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://difs1qg4mpcpw" path="res://addons/road-generator/nodes/road_point.gd" id="4_j1p16"]
 [ext_resource type="Texture2D" uid="uid://6nu3xaihulbx" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_02.png" id="5_pcsor"]
 [ext_resource type="Texture2D" uid="uid://cw45v7gjqp2gi" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_05.png" id="6_4vtun"]
-[ext_resource type="PackedScene" uid="uid://ipkfhqxahw35" path="res://Scenes/Vehicles/SportsBike.tscn" id="6_pcsor"]
+[ext_resource type="PackedScene" uid="uid://ipkfhqxahw35" path="res://Scenes/Vehicles/SportsBike/SportsBike.tscn" id="6_pcsor"]
 [ext_resource type="Texture2D" uid="uid://buasihoift61m" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_06.png" id="8_ljdgi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vtun"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="RidingPose" format=3 uid="uid://dlcpjxud4ionj"]
+
+[ext_resource type="Script" uid="uid://bet4b25x05vhe" path="res://Scripts/RidingPoses/riding_pose.gd" id="1_rirr2"]
+
+[resource]
+script = ExtResource("1_rirr2")
+seatOffsetLow = Vector3(0, -0.95, 0.05)
+seatOffsetHigh = Vector3(0, -0.905, -0.215)
+spineWeights = Array[float]([0.9, 0.3, 0.0])
+spineBendLowDeg = 32.925
+spineBendHighDeg = 5.045
+pelvisTiltLowDeg = 10.495
+pelvisTiltHighDeg = 75.74
+headTiltLowDeg = -45.01
+headTiltHighDeg = -80.0
+metadata/_custom_type_script = "uid://bet4b25x05vhe"

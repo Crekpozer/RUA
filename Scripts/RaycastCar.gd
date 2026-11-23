@@ -1,6 +1,8 @@
 extends RigidBody3D
 class_name SportsBike
 
+@export var ridingPose : RidingPose
+
 # Rodas
 @export var wheels : Array[RaycastWheel] # Para registrar as rodas
 
@@ -58,6 +60,7 @@ var grounded : bool = false
 var directTurnRate : float = 0.0
 var leanTurnRate : float = 0.0
 var leanBlend : float = 0.0
+var handlingBlend : float = 0.0
 
 func _ready() -> void:
 	
@@ -109,7 +112,8 @@ func _physics_process(delta: float) -> void:
 		# Giro que a inclinação real do corpo produziria, em rad/s
 		leanTurnRate = 9.8 * tan(rotation.z) / maxf(absf(currentSpeed), 1.0)
 		# Quanto a inclinação comanda a curva (0 a 1)
-		leanBlend = clampf(inverse_lerp(blendStartSpeed, blendFullSpeed, absf(currentSpeed)), 0.0, 1.0) * leanTurnInfluence
+		handlingBlend = clampf(inverse_lerp(blendStartSpeed, blendFullSpeed, absf(currentSpeed)), 0.0, 1.0)
+		leanBlend = handlingBlend * leanTurnInfluence
 		
 		currentTurnRate = lerpf(directTurnRate, leanTurnRate * leanTurnGain * reverseSign, leanBlend)
 		headingAngle += currentTurnRate * delta

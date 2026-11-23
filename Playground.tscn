@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cfimki45v5no2" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_Glass_01.png" id="1_80c3a"]
 [ext_resource type="Texture2D" uid="uid://dafgrf2ly6tde" path="res://Assets/Prototype/Textures/PolygonPrototype_Texture_Grid_07.png" id="2_46faf"]
-[ext_resource type="PackedScene" uid="uid://ipkfhqxahw35" path="res://Scenes/Vehicles/SportsBike.tscn" id="3_1cwr0"]
+[ext_resource type="PackedScene" uid="uid://ipkfhqxahw35" path="res://Scenes/Vehicles/SportsBike/SportsBike.tscn" id="3_1cwr0"]
 [ext_resource type="Script" uid="uid://bc6gcgu5wvc1l" path="res://Scripts/PlaygroundCamera.gd" id="4_5ejyp"]
+[ext_resource type="Resource" uid="uid://dlcpjxud4ionj" path="res://Scripts/RidingPoses/esportiva.tres" id="4_cebcm"]
 [ext_resource type="PackedScene" uid="uid://elddkhwlbxnm" path="res://Assets/Simple Racer/Fbx/SR_Bld_Pitstop_Large.fbx" id="5_threo"]
 [ext_resource type="Script" uid="uid://bxp3i4cnonh8y" path="res://addons/road-generator/nodes/road_manager.gd" id="6_3321n"]
 [ext_resource type="Script" uid="uid://cph7euje06kel" path="res://addons/road-generator/nodes/road_container.gd" id="7_5ejyp"]
@@ -222,7 +223,9 @@ show_percentage = false
 
 [node name="SportsBike" parent="." unique_id=1819788537 instance=ExtResource("3_1cwr0")]
 unique_name_in_owner = true
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.352184, 0.21949816, 85.42101)
+ridingPose = ExtResource("4_cebcm")
 rollDamping = 4000.0
 deceleration = 500.0
 forceAtGround = 0.2
@@ -238,7 +241,8 @@ transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.99999964, -9.321281, 3
 script = ExtResource("4_5ejyp")
 
 [node name="Camera3D" type="Camera3D" parent="PlaygroundCamera" unique_id=73641404]
-transform = Transform3D(0.99964195, 0.008029584, -0.025537506, 0, 0.9539562, 0.29994592, 0.026770104, -0.29983854, 0.95361465, 0.0123176575, -0.23630905, -1.4282913)
+physics_interpolation_mode = 1
+transform = Transform3D(0.99967307, -0.009149282, 0.023891615, 0, 0.93386585, 0.35762346, -0.025583562, -0.35750654, 0.93356055, -0.035803795, -0.53153086, -1.5923233)
 doppler_tracking = 2
 current = true
 fov = 100.0
